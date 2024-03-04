@@ -6,11 +6,130 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/8c842679cc.js" crossorigin="anonymous"></script>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="flex-culumn vh-100">
+    <header class="border-bottom">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          
+          <h1 class="navbar-brand">LOGO</h1>
+          
+          <div style="margin-left: 150px;">
+            <%= flash[:notice] %>
+          </div>
+          
+          
+          <ul class="navbar-nav ml-auto">
+            <% if customer_signed_in? %>
+            <li>
+              <%= link_to root_path, class:"btn btn-outline-secondary" do %>
+                TOP
+              <% end %>
+            </li>
+            &emsp;
+            <li>
+              <%= link_to root_path, class:"btn btn-outline-secondary" do %>
+                お気に入り
+              <% end %>
+            </li>
+            &emsp;
+          　<li>
+          　   <%= link_to root_path, class:"btn btn-outline-secondary" do %>
+          　     スキー場一覧
+          　   <% end %>
+          　</li>
+          　&emsp;
+          　<li>
+          　   <%= link_to root_path, class:"btn btn-outline-secondary" do %>
+          　     マイページ
+          　   <% end %>
+          　</li>
+          　&emsp;
+          　<li>
+          　   <%= link_to root_path, method: :delete, class:"btn btn-outline-secondary" do %>
+          　     ログアウト
+          　   <% end %>
+          　</li>
+          　<% elsif owner_signed_in? %>
+          　<li>
+          　   <%= link_to root_path, class:"btn btn-outline-secondary" do %>
+          　     スキー場一覧
+          　   <% end %>
+          　</li>
+          　&emsp;
+          　<li>
+          　   <%= link_to root_path, class:"btn btn-outline-secondary" do %>
+          　     マイページ
+          　   <% end %>
+          　</li>
+          　&emsp;
+          　<li>
+          　   <%= link_to root_path, method: :delete, class:"btn btn-outline-secondary" do %>
+          　     ログアウト
+          　   <% end %>
+          　</li>
+          　<% elsif admin_signed_in? %>
+          　<li>
+          　   <%= link_to root_path, class:"btn btn-outline-secondary" do %>
+          　     都道府県追加
+          　   <% end %>
+          　</li>
+          　&emsp;
+          　<li>
+          　   <%= link_to root_path, class:"btn btn-outline-secondary" do %>
+          　     スキー場一覧
+          　   <% end %>
+          　</li>
+          　&emsp;
+          　<li>
+          　   <%= link_to root_path, class:"btn btn-outline-secondary" do %>
+          　     会員一覧
+          　   <% end %>
+          　</li>
+          　&emsp;
+          　<li>
+          　   <%= link_to root_path, class:"btn btn-outline-secondary" do %>
+          　     経営者一覧
+          　   <% end %>
+          　</li>
+          　&emsp;
+          　<li>
+          　   <%= link_to root_path, method: :delete, class:"btn btn-outline-secondary" do %>
+          　     ログアウト
+          　   <% end %>
+          　</li>
+          　<% else %>
+          　<li>
+          　   <%= link_to root_path, class:"btn btn-outline-secondary" do %>
+          　     TOP
+          　   <% end %>
+          　</li>
+          　&emsp;
+          　<li>
+          　   <%= link_to homes_registration_top_path, class:"btn btn-outline-secondary" do %>
+          　     新規登録
+          　   <% end %>
+          　</li>
+          　&emsp;
+          　<li>
+          　   <%= link_to homes_session_top_path, class:"btn btn-outline-secondary" do %>
+          　   　ログイン
+          　   <% end %>
+          　</li>
+          　<% end %>
+          </ul>
+          
+          
+        </div>
+      </nav>
+    </header>
+    
     <%= yield %>
+    
+    <footer></footer>
   </body>
 </html>
