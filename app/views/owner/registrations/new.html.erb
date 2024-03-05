@@ -1,29 +1,56 @@
-<h2>Sign up</h2>
+<div class="container">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "owners/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "owner/shared/links" %>
+  <h2 class="mt-5">スキー場経営者新規登録</h2>
+  
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "owner/shared/error_messages", resource: resource %>
+  
+    <table cellpadding="10", class="mt-5">
+      
+      <tr>
+        <th>
+          経営者名
+        </th>
+        <td>
+          <%= f.text_field :owner_name, placeholder: "田中　太郎" %>
+        </td>
+      </tr>
+      
+      <tr>
+        <th>
+          メールアドレス
+        </th>
+        <td>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@example.com" %>
+        </td>
+      </tr>
+    
+      <tr>
+        <th>
+          パスワード(<%= @minimum_password_length %> 文字以上)
+        </th>
+        <td>
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </td>
+      </tr>
+  
+      <tr>
+        <th>
+          パスワード確認
+        </th>
+        <td>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </td>
+      </tr>
+  
+      <tr><th></th><td><%= f.submit "新規登録", class:"btn btn-success" %></td></tr>
+    
+    </table>
+  <% end %>
+  
+  <h4 class="mt-5">
+    すでに登録済みの方は<br>
+    <%= link_to "こちら", new_owner_session_path %>からログインしてください。
+  </h4>
+  
+</div>

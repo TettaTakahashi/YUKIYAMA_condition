@@ -23,7 +23,7 @@
           </div>
           
           
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav">
             <% if customer_signed_in? %>
             <li>
               <%= link_to root_path, class:"btn btn-outline-secondary" do %>
@@ -75,31 +75,31 @@
           　<% elsif admin_signed_in? %>
           　<li>
           　   <%= link_to root_path, class:"btn btn-outline-secondary" do %>
-          　     都道府県追加
+                都道府県追加
+          　   <% end %>
+          　</li>
+          　&emsp;
+          　<li>
+          　   <%= link_to root_path, class:"btn btn-outline-secondary" do %>  
+                スキー場一覧
           　   <% end %>
           　</li>
           　&emsp;
           　<li>
           　   <%= link_to root_path, class:"btn btn-outline-secondary" do %>
-          　     スキー場一覧
+                会員一覧
           　   <% end %>
           　</li>
           　&emsp;
           　<li>
           　   <%= link_to root_path, class:"btn btn-outline-secondary" do %>
-          　     会員一覧
+                経営者一覧
           　   <% end %>
           　</li>
           　&emsp;
           　<li>
-          　   <%= link_to root_path, class:"btn btn-outline-secondary" do %>
-          　     経営者一覧
-          　   <% end %>
-          　</li>
-          　&emsp;
-          　<li>
-          　   <%= link_to root_path, method: :delete, class:"btn btn-outline-secondary" do %>
-          　     ログアウト
+          　   <%= link_to destroy_admin_session_path, method: :delete, class:"btn btn-outline-secondary" do %>
+                ログアウト
           　   <% end %>
           　</li>
           　<% else %>
