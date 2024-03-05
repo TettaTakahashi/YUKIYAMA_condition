@@ -1,0 +1,22 @@
+<div class="container">
+  
+  <h2 class="mt-5">都道府県一覧・追加</h2>
+  
+  <%= form_with model:@prefecture, url:admin_prefecture_index_path, class:"row mt-5" do |f| %>
+  
+    <table cellpadding="15">
+      <tr>
+        <th>
+          都道府県名
+        </th>
+        <td>
+          <%= f.text_field :prefecture_name %>
+        </td>
+        <td>
+          <%= f.submit '新規追加', class:"btn btn-success" %>
+        </td>
+      </tr>
+    </table>
+    
+  <% end %>
+</div>

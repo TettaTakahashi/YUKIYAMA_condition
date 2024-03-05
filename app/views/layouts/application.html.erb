@@ -30,25 +30,25 @@
                 TOP
               <% end %>
             </li>
-            &emsp;
+            
             <li>
               <%= link_to root_path, class:"btn btn-outline-secondary" do %>
                 お気に入り
               <% end %>
             </li>
-            &emsp;
+            
           　<li>
           　   <%= link_to root_path, class:"btn btn-outline-secondary" do %>
           　     スキー場一覧
           　   <% end %>
           　</li>
-          　&emsp;
+          　
           　<li>
           　   <%= link_to root_path, class:"btn btn-outline-secondary" do %>
           　     マイページ
           　   <% end %>
           　</li>
-          　&emsp;
+          　
           　<li>
           　   <%= link_to root_path, method: :delete, class:"btn btn-outline-secondary" do %>
           　     ログアウト
@@ -60,13 +60,13 @@
           　     スキー場一覧
           　   <% end %>
           　</li>
-          　&emsp;
+          　
           　<li>
           　   <%= link_to root_path, class:"btn btn-outline-secondary" do %>
           　     マイページ
           　   <% end %>
           　</li>
-          　&emsp;
+          　
           　<li>
           　   <%= link_to root_path, method: :delete, class:"btn btn-outline-secondary" do %>
           　     ログアウト
@@ -74,29 +74,29 @@
           　</li>
           　<% elsif admin_signed_in? %>
           　<li>
-          　   <%= link_to root_path, class:"btn btn-outline-secondary" do %>
+          　   <%= link_to admin_prefecture_index_path, class:"btn btn-outline-secondary" do %>
                 都道府県追加
           　   <% end %>
           　</li>
-          　&emsp;
+          　
           　<li>
-          　   <%= link_to root_path, class:"btn btn-outline-secondary" do %>  
+          　   <%= link_to root_path, class:"btn btn-outline-secondary" do %>
                 スキー場一覧
           　   <% end %>
           　</li>
-          　&emsp;
+          　
           　<li>
           　   <%= link_to root_path, class:"btn btn-outline-secondary" do %>
                 会員一覧
           　   <% end %>
           　</li>
-          　&emsp;
+          　
           　<li>
           　   <%= link_to root_path, class:"btn btn-outline-secondary" do %>
                 経営者一覧
           　   <% end %>
           　</li>
-          　&emsp;
+          　
           　<li>
           　   <%= link_to destroy_admin_session_path, method: :delete, class:"btn btn-outline-secondary" do %>
                 ログアウト
@@ -108,13 +108,13 @@
           　     TOP
           　   <% end %>
           　</li>
-          　&emsp;
+          　
           　<li>
           　   <%= link_to homes_registration_top_path, class:"btn btn-outline-secondary" do %>
           　     新規登録
           　   <% end %>
           　</li>
-          　&emsp;
+          　
           　<li>
           　   <%= link_to homes_session_top_path, class:"btn btn-outline-secondary" do %>
           　   　ログイン
