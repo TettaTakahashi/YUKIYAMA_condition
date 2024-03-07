@@ -19,4 +19,26 @@
     </table>
     
   <% end %>
+  
+  <table class="table mt-5">
+    <thead>
+      <tr>
+        <th>都道府県名</th>
+        <th></th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <% @prefectures.each do |prefecture| %>
+        <tr>
+          <td>
+            <%= prefecture.prefecture_name %>
+          </td>
+          <td>
+            <%= link_to "編集する", edit_admin_prefecture_path(prefecture), class:"btn btn-success" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
