@@ -1,0 +1,26 @@
+<div class="container">
+  
+  <h2 class="mt-5">スキー場一覧</h2>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th>スキー場ID</th>
+        <th>スキー場名</th>
+        <th>都道府県</th>
+        <th>最終更新日時</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <% @ski_resorts.each do |ski_resort| %>
+        <tr>
+          <td><%= ski_resort.id %></td>
+          <td><%= link_to ski_resort.name, root_path %></td>
+          <td></td>
+          <td><%= ski_resort.updated_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
