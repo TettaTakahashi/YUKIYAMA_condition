@@ -44,13 +44,13 @@
             </li>
             &emsp;
             <li>
-              <%= link_to root_path, class:"btn btn-outline-secondary" do %>
+              <%= link_to customers_my_page_path, class:"btn btn-outline-secondary" do %>
                 マイページ
               <% end %>
             </li>
             &emsp;
             <li>
-              <%= link_to root_path, method: :delete, class:"btn btn-outline-secondary" do %>
+              <%= link_to destroy_customer_session_path, method: :delete, class:"btn btn-outline-secondary" do %>
                 ログアウト
               <% end %>
             </li>

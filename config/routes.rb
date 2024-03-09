@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   
   
   scope module: :customer do
-    
+    get 'customers/my_page' => 'customers#show'
+    get 'customers/information/edit' => 'customers#edit'
+    patch 'customers/information' => 'customer#update'
   end
   
   scope module: :owner do
