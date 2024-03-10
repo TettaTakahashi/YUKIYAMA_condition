@@ -20,11 +20,13 @@ Rails.application.routes.draw do
   scope module: :customer do
     get 'customers/my_page' => 'customers#show'
     get 'customers/information/edit' => 'customers#edit'
-    patch 'customers/information' => 'customer#update'
+    patch 'customers/information' => 'customers#update'
+    get 'customers/confirm_withdraw' => 'customers#confirm_withdraw'
+    patch 'customers/withdraw' => 'customers#withdraw'
   end
   
   scope module: :owner do
-    
+    get 'owners/my_page' => 'owners#show'
   end
   
   namespace :admin do
