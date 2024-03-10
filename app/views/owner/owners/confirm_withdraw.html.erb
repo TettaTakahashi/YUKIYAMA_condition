@@ -1,0 +1,14 @@
+<div class="container text-center">
+  
+  <h1 style="margin-top: 150px;">本当に退会しますか？</h1>
+  
+  <h3 class="mt-5">
+    退会すると、スキー場の新規登録や<br>
+    会員登録情報、これまで登録したスキー場を編集できなくなります。<br>
+    退会する場合は、「退会する」をクリックしてください。
+  </h3>
+  
+  <%= link_to "退会しない", owners_my_page_path, class:"btn btn-primary btn-lg m-5" %>
+  <%= link_to "退会する", owners_withdraw_path, method: :patch, "dataconfirm" => "本当に退会しますか？", class:"btn btn-danger btn-lg m-5" %>
+  
+</div>

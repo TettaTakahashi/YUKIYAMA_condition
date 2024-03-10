@@ -27,6 +27,10 @@ Rails.application.routes.draw do
   
   scope module: :owner do
     get 'owners/my_page' => 'owners#show'
+    get 'owners/information/edit' => 'owners#edit'
+    patch 'owners/information' => 'owners#update'
+    get 'owners/confirm_withdraw' => 'owners#confirm_withdraw'
+    patch 'owners/withdraw' => 'owners#withdraw'
   end
   
   namespace :admin do

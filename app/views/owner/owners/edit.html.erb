@@ -1,0 +1,28 @@
+<div class="container">
+  
+  <h2 class="mt-5 mb-5">会員情報編集</h2>
+  
+  <%= form_with model:@owner, url:owners_information_path do |f| %>
+    <table cellpadding="10", style="font-size: 23px;" >
+      <tr>
+        <th>経営者名</th>
+        <td><%= f.text_field :owner_name %></td>
+      </tr>
+      
+      <tr>
+        <th>メールアドレス</th>
+        <td><%= f.text_field :email %></td>
+      </tr>
+      
+      <tr>
+        <th></th>
+        <td><%= f.submit "変更内容を保存", class:"btn btn-success" %></td>
+      </tr>
+      
+      <tr>
+        <th></th>
+        <td><%= link_to "退会する", owners_confirm_withdraw_path, class:"btn btn-danger" %></td>
+      </tr>
+    </table>
+  <% end %>
+</div>
