@@ -1,7 +1,7 @@
 class Owner::SkiResortsController < ApplicationController
   
   def index
-    
+    @ski_resorts=SkiResort.all
   end
   
   def new
@@ -11,11 +11,11 @@ class Owner::SkiResortsController < ApplicationController
   def create
     @ski_resort=SkiResort.new(ski_resort_params)
     @ski_resort.save
-    redirect_to ski_resort_path(@ski_resort)
+    redirect_to ski_resorts_path
   end
   
   def show
-      
+    @ski_resort=SkiResort.find(params[:id])
   end
   
   private

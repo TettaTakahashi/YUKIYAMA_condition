@@ -9,6 +9,7 @@ class CreateSkiResorts < ActiveRecord::Migration[6.1]
       t.integer :price, null: false
       t.string :road_condition, null: false
       t.string :weather, null: false
+      t.integer :prefecture_id, null: false
 
       t.timestamps
     end

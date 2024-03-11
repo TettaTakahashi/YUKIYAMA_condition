@@ -4,4 +4,15 @@
     <h2 class="col-7">経営スキー場一覧</h2>
     <%= link_to "スキー場を追加する", new_ski_resort_path, class:"btn btn-success col-2" %>
   </div>
+  
+  
+  <% @ski_resorts.each do |ski_resort| %>
+    <div class="mt-5 mr-5 d-flex">
+      
+      <%= link_to image_tag(ski_resort.image, size:"280x180"), ski_resort_path(ski_resort) %>
+      
+      <%= ski_resort.name %> (<%= ski_resort.prefecture_id %>県)
+      
+    </div>
+  <% end %>
 </div>

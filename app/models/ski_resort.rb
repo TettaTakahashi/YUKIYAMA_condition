@@ -1,4 +1,6 @@
 class SkiResort < ApplicationRecord
+  
+  has_one_attached :image
     
   has_many :favorite_resorts, dependent: :destroy
   
