@@ -1,0 +1,73 @@
+<div class="container">
+  
+  <h2 class="mt-5">スキー場新規登録</h2>
+  
+  <%= form_with model: @ski_resort, url:ski_resorts_path do |f| %>
+  <table cellpadding="10">
+    <tr>
+      <th>スキー場画像</th>
+      <td><%= f.file_field :image, accept: "image/*" %></td>
+    </tr>
+    
+    <tr>
+      <th>スキー場名</th>
+      <td><%= f.text_field :name, placeholder: 'スキー場名' %></td>
+    </tr>
+    
+    <tr>
+      <th>スキー場説明文</th>
+      <td><%= f.text_area :introduction, placeholder: 'ここに説明文を記述' %></td>
+    </tr>
+    
+    <tr>
+      <th>都道府県</th>
+      <td><%= f.select :prefecture_id, options_from_collection_for_select(Prefecture.all, :id, :prefecture_name), {include_blank: '--選択してください--'} %></td>
+    </tr>
+    
+    <tr>
+      <th>営業状況</th>
+      <td>
+        <%= f.radio_button :sales_active, "true" %>
+        <%= f.label :sales_active_true, "営業中" %>
+        <%= f.radio_button :sales_active, "false" %>
+        <%= f.label :sales_active_false, "準備中" %>
+      </td>
+    </tr>
+    
+    <tr>
+      <th>1日券料金</th>
+      <td><%= f.text_field :price, placeholder: '1000' %></td>
+    </tr>
+    
+    <tr>
+      <th>リフト待ち時間</th>
+      <td><%= f.select :waiting_time, ['5分未満', '5分〜10分', '10分〜15分', '15分〜20分', '25分〜30分', '30分以上'], {include_blank: '--選択してください--'} %></td>
+    </tr>
+    
+    <tr>
+      <th>天候</th>
+      <td><%= f.select :weather, ['快晴', '晴れ', '曇り', '雨', 'みぞれ', '雪', '霧', '吹雪' ] %></td>
+    </tr>
+    
+    <tr>
+      <th>ゲレンデの状態</th>
+      <td>
+        <%= f.radio_button :snow_active, "true" %>
+        <%= f.label :snow_active_true, "圧雪" %>
+        <%= f.radio_button :snow_active, "false" %>
+        <%= f.label :snow_active_false, "非圧雪" %>
+      </td>
+    </tr>
+    
+    <tr>
+      <th>周辺道路の路面状況</th>
+      <td><%= f.select :road_condition, ['圧雪', 'アイスバーン', 'ブラックアイスバーン', '新雪', '地吹雪', 'シャーベット', 'ベタ雪', '乾燥'], {include_blank: '--選択してください--'} %></td>
+    </tr>
+    
+    <tr>
+      <th></th>
+      <td><%= f.submit "新規登録", class:"btn btn-success" %></td>
+    </tr>
+  </table>
+  <% end %>
+</div>
