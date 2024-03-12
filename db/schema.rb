@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 2024_03_11_115204) do
     t.string "road_condition", null: false
     t.string "weather", null: false
     t.integer "prefecture_id", null: false
+    t.integer "owner_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

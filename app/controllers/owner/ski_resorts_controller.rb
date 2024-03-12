@@ -9,13 +9,26 @@ class Owner::SkiResortsController < ApplicationController
   end
   
   def create
-    @ski_resort=SkiResort.new(ski_resort_params)
+    @ski_resort=current_owner.ski_resorts.new(ski_resort_params)
     @ski_resort.save
     redirect_to ski_resorts_path
   end
   
   def show
     @ski_resort=SkiResort.find(params[:id])
+  end
+  
+  def edit
+    @ski_resort=SkiResort.find(params[:id])
+  end
+  
+  def update
+    @ski_resort=SkiResort.find(params[:id])
+    if @ski_resort.update(sli_resort_params)
+      redirect_to ski_resort_path(@ski_resort)
+    else
+      render :edit
+    end
   end
   
   private
