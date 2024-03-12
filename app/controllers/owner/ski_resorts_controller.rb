@@ -31,6 +31,13 @@ class Owner::SkiResortsController < ApplicationController
     end
   end
   
+  def destroy
+     @ski_resort=SkiResort.find(params[:id])
+     @ski_resort.destroy
+     redirect_to ski_resorts_path
+  end
+  
+  
   private
   
   def ski_resort_params

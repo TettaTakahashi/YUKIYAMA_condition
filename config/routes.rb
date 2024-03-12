@@ -31,7 +31,7 @@ Rails.application.routes.draw do
     patch 'owners/information' => 'owners#update'
     get 'owners/confirm_withdraw' => 'owners#confirm_withdraw'
     patch 'owners/withdraw' => 'owners#withdraw'
-    resources :ski_resorts, only: [:index, :new, :create, :show, :edit, :update]
+    resources :ski_resorts
   end
   
   namespace :admin do
