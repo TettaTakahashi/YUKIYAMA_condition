@@ -5,7 +5,7 @@
     <%= image_tag @ski_resort.image, size: "480x310" %>
     
     <div class="ml-5">
-      <h3><%= @ski_resort.name %> (<%= @ski_resort.prefecture_id %>県)</h3>
+      <h3><%= @ski_resort.name %> (<%= @ski_resort.prefecture.prefecture_name %>)</h3>
       
       <p class="mt-5"><%= @ski_resort.introduction %></p>
       
@@ -17,6 +17,7 @@
             
           <%= link_to "削除する", ski_resort_path(@ski_resort), method: :delete, "dataconfirm" => "本当に削除しますか？", class:"btn btn-danger ml-4" %>
         <% end %>
+        
       </div>
     </div>
   </div>

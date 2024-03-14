@@ -16,8 +16,8 @@
       <% @ski_resorts.each do |ski_resort| %>
         <tr>
           <td><%= ski_resort.id %></td>
-          <td><%= link_to ski_resort.name, root_path %></td>
-          <td><%= ski_resort.prefecture_id %></td>
+          <td><%= link_to ski_resort.name, ski_resort_path(ski_resort) %></td>
+          <td><%= ski_resort.prefecture.prefecture_name %></td>
           <td><%= ski_resort.updated_at %></td>
         </tr>
       <% end %>

@@ -67,6 +67,8 @@ ActiveRecord::Schema.define(version: 2024_03_11_115204) do
   end
 
   create_table "favorite_resorts", force: :cascade do |t|
+    t.integer "ski_resort_id", null: false
+    t.integer "customer_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
