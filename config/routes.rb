@@ -36,7 +36,8 @@ Rails.application.routes.draw do
   
   namespace :admin do
     resources :prefecture, only: [:index, :edit, :create, :update]
-    get 'ski_resort', to: 'ski_resorts#index'
+    resources :ski_resorts, only: [:index]
+    resources :customers, only: [:index]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

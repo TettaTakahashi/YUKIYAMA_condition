@@ -16,7 +16,7 @@
       <% @ski_resorts.each do |ski_resort| %>
         <tr>
           <td><%= ski_resort.id %></td>
-          <td><%= link_to ski_resort.name, ski_resort_path(ski_resort) %></td>
+          <td><%= link_to ski_resort.name, ski_resort_path(ski_resort), class:"text-body" %></td>
           <td><%= ski_resort.prefecture.prefecture_name %></td>
           <td><%= ski_resort.updated_at %></td>
         </tr>
