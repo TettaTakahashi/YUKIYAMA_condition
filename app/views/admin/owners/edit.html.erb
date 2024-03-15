@@ -1,0 +1,23 @@
+<div class="container">
+  
+  <h2 class="my-5"><%= @owner.owner_name %>さんの会員情報編集</h2>
+  
+  <%= form_with model:@owner, url:admin_owner_path do |f| %>
+    <table cellpadding="15", style="font-size: 23px;">
+      <tr>
+        <th>経営者名</th>
+        <td><%= f.text_field :owner_name %></td>
+      </tr>
+      
+      <tr>
+        <th>メールアドレス</th>
+        <td><%= f.text_field :email %></td>
+      </tr>
+      
+      <tr>
+        <th></th>
+        <td><%= f.submit "変更内容を保存", class:"btn btn-success" %></td>
+      </tr>
+    </table>
+  <% end %>
+</div>

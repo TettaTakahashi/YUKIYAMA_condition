@@ -1,0 +1,33 @@
+<div class="container">
+    
+  <h2 class="my-5">経営者一覧</h2>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th>経営者ID</th>
+        <th>経営者名</th>
+        <th>メールアドレス</th>
+        <th>ステータス</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <% @owners.each do |owner| %>
+        <tr>
+          <td><%= owner.id %></td>
+          <td><%= link_to owner.owner_name, admin_owner_path(owner), class:"text-body" %></td>
+          <td><%= owner.email %></td>
+          <td>
+            <% if owner.is_active %>
+              有効
+            <% else %>
+              退会
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+    
+  </table>
+</div>
