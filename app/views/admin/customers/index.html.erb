@@ -1,6 +1,6 @@
 <div class="container">
   
-  <h2 class="mt-5 mb-4">会員一覧</h2>
+  <h2 class="my-5">会員一覧</h2>
   
   <table class="table">
     <thead>
@@ -16,7 +16,7 @@
       <% @customers.each do |customer| %>
         <tr>
           <td><%= customer.id %></td>
-          <td><%= link_to customer.customer_name, root_path, class:"text-body" %></td>
+          <td><%= link_to customer.customer_name, admin_customer_path(customer), class:"text-body" %></td>
           <td><%= customer.email %></td>
           <td>
             <% if customer.is_active %>

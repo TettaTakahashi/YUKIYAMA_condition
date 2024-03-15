@@ -1,0 +1,23 @@
+<div class="container">
+  
+  <h2 class="my-5"><%= @customer.customer_name %>さんの会員情報編集</h2>
+  
+  <%= form_with model:@customer, url:admin_customer_path do |f| %>
+    <table cellpadding="15", style="font-size: 23px;">
+      <tr>
+        <td>会員名</td>
+        <td><%= f.text_field :customer_name %></td>
+      </tr>
+      
+      <tr>
+        <th>メールアドレス</th>
+        <td><%= f.text_field :email %></td>
+      </tr>
+      
+      <tr>
+        <th></th>
+        <td><%= f.submit "変更内容を保存", class:"btn btn-success" %></td>
+      </tr>
+    </table>
+  <% end %>
+</div>
