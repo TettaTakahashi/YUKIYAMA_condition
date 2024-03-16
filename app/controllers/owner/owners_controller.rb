@@ -1,4 +1,5 @@
 class Owner::OwnersController < ApplicationController
+  before_action :authenticate_owner!
     
   def show
     @owner=Owner.find(current_owner.id)

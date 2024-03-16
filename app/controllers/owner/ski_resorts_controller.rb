@@ -1,4 +1,5 @@
 class Owner::SkiResortsController < ApplicationController
+  before_action :authenticate_owner!
   
   def index
     @ski_resorts=SkiResort.all

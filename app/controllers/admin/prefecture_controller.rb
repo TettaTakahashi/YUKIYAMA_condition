@@ -1,4 +1,5 @@
 class Admin::PrefectureController < ApplicationController
+  before_action :authenticate_admin!
     
     def index
       @prefectures=Prefecture.all

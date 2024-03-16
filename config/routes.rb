@@ -23,6 +23,8 @@ Rails.application.routes.draw do
     patch 'customers/information' => 'customers#update'
     get 'customers/confirm_withdraw' => 'customers#confirm_withdraw'
     patch 'customers/withdraw' => 'customers#withdraw'
+    get 'customers/ski_resorts' => 'ski_resorts#index'
+    get 'customers/ski_resorts/:id' => 'ski_resorts#show'
   end
   
   scope module: :owner do
@@ -36,7 +38,7 @@ Rails.application.routes.draw do
   
   namespace :admin do
     resources :prefecture, only: [:index, :edit, :create, :update]
-    resources :ski_resorts, only: [:index]
+    resources :ski_resorts, only: [:index, :show, :edit, :update]
     resources :customers, only: [:index, :show, :edit, :update]
     resources :owners, only: [:index, :show, :edit, :update]
   end
