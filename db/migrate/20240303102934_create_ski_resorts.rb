@@ -11,6 +11,7 @@ class CreateSkiResorts < ActiveRecord::Migration[6.1]
       t.string :weather, null: false
       t.integer :prefecture_id, null: false
       t.integer :owner_id, null: false
+      
 
       t.timestamps
     end

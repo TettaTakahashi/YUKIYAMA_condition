@@ -3,7 +3,7 @@
   <h2 class="mt-5">スキー場新規登録</h2>
   
   <%= form_with model: @ski_resort do |f| %>
-  <table cellpadding="10">
+  <table cellpadding="10", style="font-size: 20px;">
     <tr>
       <th>スキー場画像</th>
       <td><%= f.file_field :image, accept: "image/*" %></td>

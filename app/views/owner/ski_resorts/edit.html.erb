@@ -2,7 +2,7 @@
   
   <h2 class="mt-5 mb-5">スキー場情報編集</h2>
   
-  <%= form_with model:@ski_resort do |f| %>
+  <%= form_with model: @ski_resort do |f| %>
     <table cellpadding="10", style="font-size: 20px;">
       <tr>
         <th>スキー場画像</th>
@@ -21,7 +21,7 @@
       
       <tr>
         <th>都道府県</th>
-        <td><%= f.select :prefecture_id, options_from_collection_for_select(Prefecture.all, :id, :prefecture_name), {include_blank: '--選択してください--'} %></td>
+        <td><%= f.select :prefecture_id, options_from_collection_for_select(Prefecture.all, :id, :prefecture_name, @ski_resort.prefecture_id), {include_blank: '--選択してください--'} %></td>
       </tr>
       
       <tr>
