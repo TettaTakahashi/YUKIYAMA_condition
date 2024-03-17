@@ -27,7 +27,7 @@ class Owner::SessionsController < Devise::SessionsController
   # end
   
   def after_sign_in_path_for(resource)
-    ski_resorts_path
+    owners_ski_resorts_path
   end
   
   def after_sign_out_path_for(resource)

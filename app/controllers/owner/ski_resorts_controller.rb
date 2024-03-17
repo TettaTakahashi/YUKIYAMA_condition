@@ -12,7 +12,7 @@ class Owner::SkiResortsController < ApplicationController
   def create
     @ski_resort=current_owner.ski_resorts.new(ski_resort_params)
     @ski_resort.save
-    redirect_to ski_resorts_path
+    redirect_to owners_ski_resorts_path
   end
   
   def show
@@ -26,7 +26,7 @@ class Owner::SkiResortsController < ApplicationController
   def update
     @ski_resort=current_owner.ski_resorts.find(params[:id])
     if @ski_resort.update(ski_resort_params)
-      redirect_to ski_resort_path(@ski_resort)
+      redirect_to owners_ski_resort_path(@ski_resort)
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class Owner::SkiResortsController < ApplicationController
   def destroy
      @ski_resort=SkiResort.find(params[:id])
      @ski_resort.destroy
-     redirect_to ski_resorts_path
+     redirect_to owners_ski_resorts_path
   end
   
   

@@ -38,7 +38,7 @@
             </li>
             &emsp;
             <li>
-               <%= link_to root_path, class:"btn btn-outline-secondary" do %>
+               <%= link_to ski_resorts_path, class:"btn btn-outline-secondary" do %>
                  スキー場一覧
                <% end %>
             </li>
@@ -56,7 +56,7 @@
             </li>
             <% elsif owner_signed_in? %>
             <li>
-              <%= link_to ski_resorts_path, class:"btn btn-outline-secondary" do %>
+              <%= link_to owners_ski_resorts_path, class:"btn btn-outline-secondary" do %>
                 スキー場一覧
               <% end %>
             </li>

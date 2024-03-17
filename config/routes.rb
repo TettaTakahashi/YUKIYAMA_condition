@@ -23,8 +23,10 @@ Rails.application.routes.draw do
     patch 'customers/information' => 'customers#update'
     get 'customers/confirm_withdraw' => 'customers#confirm_withdraw'
     patch 'customers/withdraw' => 'customers#withdraw'
-    get 'customers/ski_resorts' => 'ski_resorts#index'
-    get 'customers/ski_resorts/:id' => 'ski_resorts#show', as: 'customers_ski_resort'
+    resources :ski_resorts, only: [:index, :show] do
+       resources :reviews, only: [:create, :destroy]
+    end
+    
   end
   
   scope module: :owner do
@@ -33,6 +35,8 @@ Rails.application.routes.draw do
     patch 'owners/information' => 'owners#update'
     get 'owners/confirm_withdraw' => 'owners#confirm_withdraw'
     patch 'owners/withdraw' => 'owners#withdraw'
+    get 'owners/ski_resorts' => 'ski_resorts#index'
+    get 'owners/ski_resorts/:id' => 'ski_resorts#show', as: 'owners_ski_resort'
     resources :ski_resorts
   end
   
