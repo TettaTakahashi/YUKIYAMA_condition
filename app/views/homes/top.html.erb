@@ -5,7 +5,7 @@
   <div class="d-flex">
     <% @ski_resorts.first(6).each do |ski_resort| %>
       <div class="my-5 mx-4">
-        <%= link_to image_tag(ski_resort.image, size:"280x180"), ski_resort_path(ski_resort) %>
+        <%= link_to image_tag(ski_resort.image, size:"280x180"), customers_ski_resort_path(ski_resort) %>
         <h5 class="mt-3"><%= ski_resort.name %> (<%= ski_resort.prefecture.prefecture_name %>)</h5>
       </div>
     <% end %>

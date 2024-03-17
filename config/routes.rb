@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     get 'customers/confirm_withdraw' => 'customers#confirm_withdraw'
     patch 'customers/withdraw' => 'customers#withdraw'
     get 'customers/ski_resorts' => 'ski_resorts#index'
-    get 'customers/ski_resorts/:id' => 'ski_resorts#show'
+    get 'customers/ski_resorts/:id' => 'ski_resorts#show', as: 'customers_ski_resort'
   end
   
   scope module: :owner do
