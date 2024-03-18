@@ -18,49 +18,67 @@
     </div>
   </div>
   
-  
-  <table cellpadding="15", style="margin-top: 90px; font-size: 21px;">
-    <tr>
-      <th>営業状況</th>
-      <td>
-        <% if @ski_resort.sales_active %>
-          営業中
-        <% else %>
-          準備中
-        <% end %>
-      </td>
-    </tr>
+  <div class="d-flex">
+    <table class="col-6", cellpadding="15", style="margin-top: 90px; font-size: 21px;">
+      <tr>
+        <th>営業状況</th>
+        <td>
+          <% if @ski_resort.sales_active %>
+            営業中
+          <% else %>
+            準備中
+          <% end %>
+        </td>
+      </tr>
+      
+      <tr>
+        <th>1日券料金</th>
+        <td>¥<%= @ski_resort.price %></td>
+      </tr>
+      
+      <tr>
+        <th>リフト待ち時間</th>
+        <td><%= @ski_resort.waiting_time %></td>
+      </tr>
+      
+      <tr>
+        <th>天候</th>
+        <td><%= @ski_resort.weather %></td>
+      </tr>
+      
+      <tr>
+        <th>ゲレンデの状態</th>
+        <td>
+          <% if @ski_resort.snow_active %>
+            圧雪
+          <% else %>
+            非圧雪
+          <% end %>
+        </td>
+      </tr>
+      
+      <tr>
+        <th>周辺道路の路面状況</th>
+        <td><%= @ski_resort.road_condition %></td>
+      </tr>
+    </table>
     
-    <tr>
-      <th>1日券料金</th>
-      <td>¥<%= @ski_resort.price %></td>
-    </tr>
+    <div class="col-6">
+      <div class="d-flex justify-content-between border-bottom ">
+        <h3>Review</h3>
+        <%= link_to "コメントする", new_ski_resort_review_path(@ski_resort), class:"btn btn-primary" %>
+      </div>
+      
+      <% @reviews.each do |review| %>
+        <div class="d-flex">
+          <%= review.customer.customer_name %>
+          <div class="vr"></div>
+          <%= review.comment %>
+        </div>
+      <% end %>
+      
+    </div>
     
-    <tr>
-      <th>リフト待ち時間</th>
-      <td><%= @ski_resort.waiting_time %></td>
-    </tr>
-    
-    <tr>
-      <th>天候</th>
-      <td><%= @ski_resort.weather %></td>
-    </tr>
-    
-    <tr>
-      <th>ゲレンデの状態</th>
-      <td>
-        <% if @ski_resort.snow_active %>
-          圧雪
-        <% else %>
-          非圧雪
-        <% end %>
-      </td>
-    </tr>
-    
-    <tr>
-      <th>周辺道路の路面状況</th>
-      <td><%= @ski_resort.road_condition %></td>
-    </tr>
-  </table>
+  </div>
   
 </div>
