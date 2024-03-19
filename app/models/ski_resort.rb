@@ -10,4 +10,18 @@ class SkiResort < ApplicationRecord
   
   belongs_to :prefecture
   
+  def self.looks(search, word)
+    if search == "perfect_match"
+      @ski_resort=SkiResort.where("title LIKE?","#{word}")
+    elsif search == "forward_match"
+      @ski_resort=SkiResort.where("title LIKE?","#{word}")
+    elsif search == "backward_match"
+      @ski_resort=SkiResort.where("title LIKE?","#{word}")
+    elsif search == "partial_match"
+      @ski_resort=SkiResort.where("title LIKE?","#{word}")
+    else
+      @ski_resort=SkiResort.all
+    end
+  end
+  
 end

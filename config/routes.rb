@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'searches/search'
   devise_for :admin, skip: [:registrations, :passwords], controllers: {
     sessions: "admin/sessions"
   }
@@ -15,6 +16,8 @@ Rails.application.routes.draw do
   root to: "homes#top"
   get 'homes/registration_top'
   get 'homes/session_top'
+  
+  get "search" => "searches#search"
   
   
   scope module: :customer do
