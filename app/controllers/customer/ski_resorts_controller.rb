@@ -7,6 +7,7 @@ class Customer::SkiResortsController < ApplicationController
   
   def show
     @ski_resort=SkiResort.find(params[:id])
+    @review=Review.new
     @reviews=Review.all
   end
 end

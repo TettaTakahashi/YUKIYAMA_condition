@@ -63,18 +63,29 @@
       </tr>
     </table>
     
-    <div class="col-6">
-      <div class="d-flex justify-content-between border-bottom ">
-        <h3>Review</h3>
-        <%= link_to "コメントする", new_ski_resort_review_path(@ski_resort), class:"btn btn-primary" %>
-      </div>
+    <div class="col-6 mt-5">
+      
+      <h3 class="border-bottom">Review</h3>
       
       <% @reviews.each do |review| %>
-        <div class="d-flex">
-          <%= review.customer.customer_name %>
-          <div class="vr"></div>
-          <%= review.comment %>
-        </div>
+        <table cellpadding="10">
+          <tr>
+            <td><%= review.customer.customer_name %>  ：</td>
+            
+            <td><%= review.comment %></td>
+            
+            <td>
+              <% if review.customer == current_customer %>
+                <%= link_to "削除する", ski_resort_review_path(@ski_resort, review), method: :delete, class:"btn btn-sm btn-danger" %>
+              <% end %>
+            </td>
+          </tr>
+        </table>
+      <% end %>
+      
+      <%= form_with model: [@ski_resort, @review] do |f| %>
+        <%= f.text_area :comment, placeholder: "コメントを書く", class:"w-100" %>
+        <%= f.submit "送信" %>
       <% end %>
       
     </div>

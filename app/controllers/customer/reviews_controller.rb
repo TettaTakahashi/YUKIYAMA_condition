@@ -1,12 +1,8 @@
 class Customer::ReviewsController < ApplicationController
   before_action :authenticate_customer!
   
-  def new
-    @review=Review.new
-  end
-    
   def create
-    @ski_resort=SkiResort.find(params[:id])
+    @ski_resort=SkiResort.find(params[:ski_resort_id])
     @review=Review.new(review_params)
     @review.customer_id=current_customer.id
     @review.ski_resort_id=@ski_resort.id
@@ -15,11 +11,11 @@ class Customer::ReviewsController < ApplicationController
   end
   
   def destroy
-    @ski_resort=SkiResort.find(params[:id])
-    @post_comments=@ski_resort.comments
-    Review.find_by(id: params[:id], ski_resort_id: params[:ski_resort_id]).destroy
+    @ski_resort=SkiResort.find(params[:ski_resort_id])
+    @review=Review.find(params[:id])
+    @review.destroy
+    redirect_to ski_resort_path(@ski_resort)
   end
-  
   
   private
   

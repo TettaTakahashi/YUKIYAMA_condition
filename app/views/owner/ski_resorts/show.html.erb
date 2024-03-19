@@ -23,48 +23,68 @@
   </div>
   
   
-  <table cellpadding="15", style="margin-top: 90px; font-size: 21px;">
-    <tr>
-      <th>営業状況</th>
-      <td>
-        <% if @ski_resort.sales_active %>
-          営業中
-        <% else %>
-          準備中
-        <% end %>
-      </td>
-    </tr>
+  <div class="d-flex">
     
-    <tr>
-      <th>1日券料金</th>
-      <td>¥<%= @ski_resort.price %></td>
-    </tr>
+    <table class="col-6", cellpadding="15", style="margin-top: 90px; font-size: 21px;">
+      <tr>
+        <th>営業状況</th>
+        <td>
+          <% if @ski_resort.sales_active %>
+            営業中
+          <% else %>
+            準備中
+          <% end %>
+        </td>
+      </tr>
+      
+      <tr>
+        <th>1日券料金</th>
+        <td>¥<%= @ski_resort.price %></td>
+      </tr>
+      
+      <tr>
+        <th>リフト待ち時間</th>
+        <td><%= @ski_resort.waiting_time %></td>
+      </tr>
+      
+      <tr>
+        <th>天候</th>
+        <td><%= @ski_resort.weather %></td>
+      </tr>
+      
+      <tr>
+        <th>ゲレンデの状態</th>
+        <td>
+          <% if @ski_resort.snow_active %>
+            圧雪
+          <% else %>
+            非圧雪
+          <% end %>
+        </td>
+      </tr>
+      
+      <tr>
+        <th>周辺道路の路面状況</th>
+        <td><%= @ski_resort.road_condition %></td>
+      </tr>
+    </table>
     
-    <tr>
-      <th>リフト待ち時間</th>
-      <td><%= @ski_resort.waiting_time %></td>
-    </tr>
-    
-    <tr>
-      <th>天候</th>
-      <td><%= @ski_resort.weather %></td>
-    </tr>
-    
-    <tr>
-      <th>ゲレンデの状態</th>
-      <td>
-        <% if @ski_resort.snow_active %>
-          圧雪
-        <% else %>
-          非圧雪
-        <% end %>
-      </td>
-    </tr>
-    
-    <tr>
-      <th>周辺道路の路面状況</th>
-      <td><%= @ski_resort.road_condition %></td>
-    </tr>
-  </table>
+    <div class="col-6 mt-5">
+      
+      <h3 class="border-bottom">Review</h3>
+      
+      <% @reviews.each do |review| %>
+        <table cellpadding="10">
+          <tr>
+            <td><%= review.customer.customer_name %>  ：</td>
+            
+            <td><%= review.comment %></td>
+          </tr>
+        </table>
+      <% end %>
+      
+    </div>
+  
+  </div>
   
 </div>

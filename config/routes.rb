@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     get 'customers/confirm_withdraw' => 'customers#confirm_withdraw'
     patch 'customers/withdraw' => 'customers#withdraw'
     resources :ski_resorts, only: [:index, :show] do
-       resources :reviews, only: [:new, :create, :destroy]
+       resources :reviews, only: [:create, :destroy]
     end
     
   end
@@ -42,7 +42,9 @@ Rails.application.routes.draw do
   
   namespace :admin do
     resources :prefecture, only: [:index, :edit, :create, :update]
-    resources :ski_resorts, only: [:index, :show, :edit, :update]
+    resources :ski_resorts, only: [:index, :show, :edit, :update] do
+      resources :reviews, only: [:destroy]
+    end
     resources :customers, only: [:index, :show, :edit, :update]
     resources :owners, only: [:index, :show, :edit, :update]
   end
