@@ -16,7 +16,7 @@ class Customer::SkiResortsController < ApplicationController
     if params[:name].present?
       @ski_resorts=SkiResort.where('name LIKE ?', "%#{params[:name]}")
     else
-      @ski_resorts=SkiResort.none
+      @ski_resorts=SkiResort.where(prefecture_id: params[:format]).page(params[:page])
     end
   end
 end
