@@ -1,0 +1,17 @@
+<div class="col-xs-2">
+  <table class="table table-hober table-bordered">
+    <thead>
+      <tr>
+        <th class="active text-center"><h5>都道府県検索</h5></th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <% prefectures.each do |prefecture| %>
+        <tr>
+          <td><%= link_to prefecture.prefecture_name, search_ski_resorts_path(prefecture.id), method: :get %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

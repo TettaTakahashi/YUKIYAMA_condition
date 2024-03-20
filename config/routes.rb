@@ -29,7 +29,7 @@ Rails.application.routes.draw do
        resources :reviews, only: [:create, :destroy]
        get :search, on: :collection
     end
-    
+    resources :prefecture, only: [:show]
   end
   
   scope module: :owner do

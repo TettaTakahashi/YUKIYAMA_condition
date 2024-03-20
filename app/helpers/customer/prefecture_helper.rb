@@ -1,0 +1,2 @@
+module Customer::PrefectureHelper
+end
