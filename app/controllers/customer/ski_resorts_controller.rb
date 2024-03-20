@@ -10,4 +10,12 @@ class Customer::SkiResortsController < ApplicationController
     @review=Review.new
     @reviews=Review.all
   end
+  
+  def search
+    if params[:name].present?
+      @ski_resorts=SkiResort.where('name LIKE ?', "%#{params[:name]}")
+    else
+      @ski_resorts=SkiResort.none
+    end
+  end
 end

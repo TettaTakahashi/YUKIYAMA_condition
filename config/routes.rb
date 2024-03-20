@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   get 'homes/registration_top'
   get 'homes/session_top'
   
-  get "search" => "searches#search"
   
   
   scope module: :customer do
@@ -28,6 +27,7 @@ Rails.application.routes.draw do
     patch 'customers/withdraw' => 'customers#withdraw'
     resources :ski_resorts, only: [:index, :show] do
        resources :reviews, only: [:create, :destroy]
+       get :search, on: :collection
     end
     
   end
