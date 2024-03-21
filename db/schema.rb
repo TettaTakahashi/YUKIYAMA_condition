@@ -67,10 +67,13 @@ ActiveRecord::Schema.define(version: 2024_03_17_091620) do
   end
 
   create_table "favorite_resorts", force: :cascade do |t|
-    t.integer "ski_resort_id", null: false
-    t.integer "customer_id", null: false
+    t.integer "customer_id"
+    t.integer "ski_resort_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id", "ski_resort_id"], name: "index_favorite_resorts_on_customer_id_and_ski_resort_id", unique: true
+    t.index ["customer_id"], name: "index_favorite_resorts_on_customer_id"
+    t.index ["ski_resort_id"], name: "index_favorite_resorts_on_ski_resort_id"
   end
 
   create_table "owners", force: :cascade do |t|
@@ -118,4 +121,6 @@ ActiveRecord::Schema.define(version: 2024_03_17_091620) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "favorite_resorts", "customers"
+  add_foreign_key "favorite_resorts", "ski_resorts"
 end
