@@ -28,7 +28,11 @@ Rails.application.routes.draw do
     resources :ski_resorts, only: [:index, :show] do
        resources :reviews, only: [:create, :destroy]
        get :search, on: :collection
+       member do
+         post 'add', to: "favorite_resorts#create"
+       end
     end
+    resources :favorite_resorts, only: [:destroy]
     resources :prefecture, only: [:show]
   end
   
