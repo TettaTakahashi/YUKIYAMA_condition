@@ -10,24 +10,31 @@
     </thead>
     
     <tbody>
-      <% @favorite_resorts.each do |ski_resort| %>
-        <tr>
-          <td><%= link_to image_tag(ski_resort.image, size:"280x180"), ski_resort_path(ski_resort) %></td>
-          <td><h4><%= link_to ski_resort.name, ski_resort_path(ski_resort), class:"text-body" %></h4></td>
-          <td>
-            <h5>
-              <% if ski_resort.sales_active %>
-                営業中
-              <% else %>
-                準備中
-              <% end %>
-            </h5>
-            <br>
-            <h5>天候：<%= ski_resort.weather %></h5>
-            <br>
-            最終更新：<%= ski_resort.updated_at.strftime('%Y/%m/%d/%T') %>
-          </td>
-        </tr>
+      <% @favorite_resorts.each do |favorite_resort| %>
+        <% ski_resort=SkiResort.find(favorite_resort.ski_resort_id) %>
+          <tr>
+            <td><%= link_to image_tag(ski_resort.image, size:"280x180"), ski_resort_path(ski_resort) %></td>
+            <td>
+              <h4>
+                <%= link_to ski_resort.name, ski_resort_path(ski_resort), class:"text-body" %>
+              </h4>
+              <br>
+              <%= link_to "お気に入りから外す", favorite_resort_path(ski_resort), method: :delete, class:"btn btn-success" %>
+            </td>
+            <td>
+              <h5>
+                <% if ski_resort.sales_active %>
+                  営業中
+                <% else %>
+                  準備中
+                <% end %>
+              </h5>
+              <br>
+              <h5>天候：<%= ski_resort.weather %></h5>
+              <br>
+              最終更新：<%= ski_resort.updated_at.strftime('%Y/%m/%d/%T') %>
+            </td>
+          </tr>
       <% end %>
     </tbody>
   </table>
