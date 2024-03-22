@@ -32,7 +32,7 @@ Rails.application.routes.draw do
          post 'add', to: "favorite_resorts#create"
        end
     end
-    resources :favorite_resorts, only: [:destroy]
+    resources :favorite_resorts, only: [:index, :destroy]
     resources :prefecture, only: [:show]
   end
   

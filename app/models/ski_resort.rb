@@ -11,4 +11,8 @@ class SkiResort < ApplicationRecord
   belongs_to :prefecture
   
   has_many :customers, through: :favorite_resorts
+  
+  def favorite_resorted_by?(customer)
+    favorite_resorts.where(customer_id: customer).exists?
+  end
 end
