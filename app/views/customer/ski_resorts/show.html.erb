@@ -13,7 +13,7 @@
         最終更新：<%= @ski_resort.updated_at.strftime('%Y/%m/%d/%T') %>
       
       <% if @ski_resort.favorite_resorted_by?(current_customer) %>  
-        <% link_to "お気に入りから外す", favorite_resort_path(@ski_resort), method: :delete, class:"btn btn-success ml-4" %>
+        <%= link_to "お気に入りから外す", favorite_resort_path(@ski_resort), method: :delete, class:"btn btn-success ml-4" %>
       <% else %>
         <%= link_to "お気に入りに追加する", add_ski_resort_path(@ski_resort), method: :post, class:"btn btn-success ml-4" %>
       <% end %>

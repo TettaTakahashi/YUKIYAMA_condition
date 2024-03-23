@@ -26,11 +26,11 @@ Rails.application.routes.draw do
     get 'customers/confirm_withdraw' => 'customers#confirm_withdraw'
     patch 'customers/withdraw' => 'customers#withdraw'
     resources :ski_resorts, only: [:index, :show] do
-       resources :reviews, only: [:create, :destroy]
-       get :search, on: :collection
-       member do
-         post 'add', to: "favorite_resorts#create"
-       end
+      resources :reviews, only: [:create, :destroy]
+      get :search, on: :collection
+      member do
+        post 'add', to: "favorite_resorts#create"
+      end
     end
     resources :favorite_resorts, only: [:index, :destroy]
     resources :prefecture, only: [:show]

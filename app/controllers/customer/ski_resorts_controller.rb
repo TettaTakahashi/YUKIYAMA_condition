@@ -13,8 +13,17 @@ class Customer::SkiResortsController < ApplicationController
   end
   
   def search
+    @prefectures=Prefecture.all
+    min_search=params[:min_search]
+    max_search=params[:max_search]
     if params[:name].present?
       @ski_resorts=SkiResort.where('name LIKE ?', "%#{params[:name]}")
+    elsif max_search != '' && max_search != nil && min_search != '' && min_search != nil
+      @ski_resorts=SkiResort.where("price >= #{min_search} and price <= #{max_search}")
+    elsif max_search != '' && max_search != nil
+      @ski_resorts=SkiResort.where("price <= #{max_search}")
+    elsif min_search != '' && min_search != nil
+      @ski_resorts=SkiResort.where("price >= #{min_search}")
     else
       @ski_resorts=SkiResort.where(prefecture_id: params[:format]).page(params[:page])
     end

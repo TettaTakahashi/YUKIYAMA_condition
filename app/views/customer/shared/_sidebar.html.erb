@@ -14,4 +14,13 @@
       <% end %>
     </tbody>
   </table>
+  
+  <div class="mt-5">
+    <h5>料金で検索する</h5>
+    <%= form_tag({controller: "ski_resorts", action: "search"}, method: :get) do %>
+      <%= number_field_tag :min_search, "", step: 100, placeholder: "最小料金" %><br>
+      <%= number_field_tag :max_search, "", step: 100, placeholder: "最大料金" %>
+      <%= submit_tag "検索", id: "submit" %>
+    <% end %>
+  </div>
 </div>
