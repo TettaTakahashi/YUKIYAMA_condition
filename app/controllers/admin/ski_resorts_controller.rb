@@ -2,7 +2,7 @@ class Admin::SkiResortsController < ApplicationController
   before_action :authenticate_admin!
     
   def index
-    @ski_resorts=SkiResort.all
+    @ski_resorts=SkiResort.page(params[:page])
   end
   
   def show

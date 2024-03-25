@@ -2,7 +2,7 @@ class Customer::SkiResortsController < ApplicationController
   before_action :authenticate_customer!, only: [:show]
   
   def index
-    @ski_resorts=SkiResort.all
+    @ski_resorts=SkiResort.page(params[:page])
     @prefectures=Prefecture.all
   end
   
