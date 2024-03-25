@@ -72,19 +72,20 @@
       <h3 class="border-bottom">Review</h3>
       
       <% @reviews.each do |review| %>
-        <table cellpadding="10">
-          <tr>
-            <td><%= review.customer.customer_name %>  ：</td>
+        
+        <div class="mt-1">
+          <div style="font-weight: bold;"><%= review.customer.customer_name %>  ：</div>
             
-            <td><%= review.comment %></td>
-            
-            <td>
-              <% if review.customer == current_customer %>
-                <%= link_to "削除する", ski_resort_review_path(@ski_resort, review), method: :delete, class:"btn btn-sm btn-danger" %>
-              <% end %>
-            </td>
-          </tr>
-        </table>
+          <%= review.comment %>
+        
+           
+          <% if review.customer == current_customer %>
+            <div class="text-right">
+              <%= link_to "削除する", ski_resort_review_path(@ski_resort, review), method: :delete, "data-confirm" => "本当に削除しますか？", class:"btn btn-sm btn-danger" %>
+            </div>
+          <% end %>
+        </div>
+        <br>
       <% end %>
       
       <%= form_with model: [@ski_resort, @review] do |f| %>

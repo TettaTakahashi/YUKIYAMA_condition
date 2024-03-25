@@ -74,13 +74,13 @@
       <h3 class="border-bottom">Review</h3>
       
       <% @reviews.each do |review| %>
-        <table cellpadding="10">
-          <tr>
-            <td><%= review.customer.customer_name %>  ：</td>
+        
+        <div class="mt-1">
+          <div style="font-weight: bold;"><%= review.customer.customer_name %>  ：</div>
             
-            <td><%= review.comment %></td>
-          </tr>
-        </table>
+          <%= review.comment %>
+        </div>
+        <br>
       <% end %>
       
     </div>

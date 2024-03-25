@@ -44,7 +44,8 @@ Rails.application.routes.draw do
     patch 'owners/withdraw' => 'owners#withdraw'
     get 'owners/ski_resorts' => 'ski_resorts#index'
     get 'owners/ski_resorts/:id' => 'ski_resorts#show', as: 'owners_ski_resort'
-    resources :ski_resorts
+    get 'ski_resort/new' => 'ski_resorts#new'
+    resources :ski_resorts, only: [:create, :edit, :update, :destroy]
   end
   
   namespace :admin do
