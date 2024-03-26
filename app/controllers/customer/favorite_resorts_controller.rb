@@ -19,6 +19,7 @@ class Customer::FavoriteResortsController < ApplicationController
   
   def index
     @favorite_resorts=FavoriteResort.page(params[:page])
+    @favorite_resorts_all=FavoriteResort.all
   end
   
 end

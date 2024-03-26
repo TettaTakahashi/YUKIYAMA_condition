@@ -3,6 +3,7 @@ class Customer::SkiResortsController < ApplicationController
   
   def index
     @ski_resorts=SkiResort.page(params[:page])
+    @ski_resorts_all=SkiResort.all
     @prefectures=Prefecture.all
   end
   
