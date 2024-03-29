@@ -17,16 +17,15 @@ class Customer::SkiResortsController < ApplicationController
     @prefectures=Prefecture.all
     min_search=params[:min_search]
     max_search=params[:max_search]
-    if params[:name].present?
-      @ski_resorts=SkiResort.where('name LIKE ?', "%#{params[:name]}")
-    elsif max_search != '' && max_search != nil && min_search != '' && min_search != nil
-      @ski_resorts=SkiResort.where("price >= #{min_search} and price <= #{max_search}")
-    elsif max_search != '' && max_search != nil
-      @ski_resorts=SkiResort.where("price <= #{max_search}")
-    elsif min_search != '' && min_search != nil
-      @ski_resorts=SkiResort.where("price >= #{min_search}")
-    else
-      @ski_resorts=SkiResort.where(prefecture_id: params[:format]).page(params[:page])
-    end
+    
+    @ski_resorts = SkiResort.all
+    @ski_resorts = @ski_resorts.where('name LIKE ?', "%#{params[:name]}") if params[:name].present?
+    @ski_resorts = @ski_resorts.where(prefecture_id: params[:prefecture_id]) if params[:prefecture_id].present?
+    @ski_resorts = @ski_resorts.where("price <= #{max_search}") if max_search.present?
+    @ski_resorts = @ski_resorts.where("price >= #{min_search}") if min_search.present?
+    @ski_resorts = @ski_resorts.where(snow_active: params[:snow_active]) if params[:snow_active].present?
+    @ski_resorts = @ski_resorts.where(sales_active: params[:sales_active]) if params[:sales_active].present?
+    @ski_resorts = @ski_resorts.page(params[:page])
   end
+  
 end

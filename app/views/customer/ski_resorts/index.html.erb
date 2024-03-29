@@ -18,7 +18,7 @@
         <% @ski_resorts.each do |ski_resort| %>
           <tr>
             <td><%= link_to image_tag(ski_resort.image, size:"280x180"), ski_resort_path(ski_resort) %></td>
-            <td><h4><%= link_to ski_resort.name, ski_resort_path(ski_resort), class:"text-body" %></h4></td>
+            <td><h4><%= link_to ski_resort.name, ski_resort_path(ski_resort), class:"text-body" %></h4> (<%= ski_resort.prefecture.prefecture_name %>)</td>
             <td>
               <h5>
                 <% if ski_resort.sales_active %>
