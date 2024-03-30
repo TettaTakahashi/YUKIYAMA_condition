@@ -90,7 +90,7 @@
       
       <%= form_with model: [@ski_resort, @review] do |f| %>
         <%= f.text_area :comment, placeholder: "コメントを書く", class:"w-100" %>
-        <%= f.submit "送信" %>
+        <%= f.submit "送信", class:"btn btn-sm btn-info" %>
       <% end %>
       
     </div>

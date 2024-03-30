@@ -12,7 +12,7 @@
   </head>
 
   <body class="flex-culumn vh-100">
-    <header class="border-bottom">
+    <header class="border-bottom", style="background-color: #99CCCC;">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
           
@@ -127,7 +127,7 @@
             <div class="search_form col-2">
               <%= form_with url: search_ski_resorts_path, local: true, method: :get do |f| %>
                 <%= f.text_field :name %>
-                <%= f.submit "検索" %>
+                <%= f.submit "検索", class:"btn btn-sm btn-primary" %>
               <% end %>
             </div>
           <% end %>
@@ -139,6 +139,8 @@
     
     <%= yield %>
     
-    <footer class="border-top", style="margin-top: 120px;"></footer>
+    <footer class="border-top", style="margin-top: 80px;">
+      <div style="height: 130px;"></div>
+    </footer>
   </body>
 </html>
