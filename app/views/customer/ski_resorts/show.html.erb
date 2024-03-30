@@ -10,14 +10,15 @@
       <p class="mt-5"><%= @ski_resort.introduction %></p>
       
       <div class="d-flex mt-5">
-        最終更新：<%= @ski_resort.updated_at.strftime('%Y/%m/%d/%T') %>
+        <div class="mt-2">最終更新：<%= @ski_resort.updated_at.strftime('%Y/%m/%d/%T') %></div>
       
-      <% if @ski_resort.favorite_resorted_by?(current_customer) %>  
-        <%= link_to "お気に入りから外す", favorite_resort_path(@ski_resort), method: :delete, class:"btn btn-success ml-4" %>
-      <% else %>
-        <%= link_to "お気に入りに追加する", add_ski_resort_path(@ski_resort), method: :post, class:"btn btn-success ml-4" %>
-      <% end %>
+        <% if @ski_resort.favorite_resorted_by?(current_customer) %>  
+          <%= link_to "お気に入りから外す", favorite_resort_path(@ski_resort), method: :delete, class:"btn btn-success ml-4" %>
+        <% else %>
+          <%= link_to "お気に入りに追加する", add_ski_resort_path(@ski_resort), method: :post, class:"btn btn-success ml-4" %>
+        <% end %>
         
+        <h5 class="ml-4 mt-2">💗 <%= @favorite_resorts_count %></h5>
       </div>
     </div>
   </div>

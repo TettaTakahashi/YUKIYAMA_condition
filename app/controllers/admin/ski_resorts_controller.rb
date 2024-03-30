@@ -8,6 +8,9 @@ class Admin::SkiResortsController < ApplicationController
   def show
     @ski_resort=SkiResort.find(params[:id])
     @reviews=Review.all
+    
+    @favorite_resorts_count=0
+    @favorite_resorts_count+=@ski_resort.favorite_resorts.size
   end
   
   def edit
