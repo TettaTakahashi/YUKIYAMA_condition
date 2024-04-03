@@ -28,7 +28,7 @@ class Customer::SkiResortsController < ApplicationController
     @ski_resorts=@ski_resorts.where("price >= #{min_search}") if min_search.present?
     @ski_resorts=@ski_resorts.where(snow_active: params[:snow_active]) if params[:snow_active].present?
     @ski_resorts=@ski_resorts.where(sales_active: params[:sales_active]) if params[:sales_active].present?
-    @ski_resorts=@ki_resorts.page(params[:page])
+    @ski_resorts=@ski_resorts.page(params[:page])
   end
   
 end
