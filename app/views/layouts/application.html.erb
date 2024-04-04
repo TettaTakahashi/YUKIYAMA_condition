@@ -16,108 +16,108 @@
       <nav class="navbar navbar-expand-lg">
         <div class="container">
           
-          <h1 class="navbar-brand col-3", style="font-family: fantasy;">YUKIYAMA Condition</h1>
+          <h1 class="navbar-brand col-2", style="font-family: fantasy;">YUKIYAMA Condition</h1>
           
           <div style="margin-left: 100px;">
             <%= flash[:notice] %>
           </div>
           
           
-          <ul class="navbar-nav col-7">
+          <ul class="navbar-nav col-8">
             <% if customer_signed_in? %>
             <li>
               <%= link_to root_path, class:"btn btn-outline-secondary" do %>
-                TOP
+                <i class="fa-solid fa-house"></i> TOP
               <% end %>
             </li>
             &emsp;
             <li>
               <%= link_to favorite_resorts_path, class:"btn btn-outline-secondary" do %>
-                お気に入り
+                <i class="fa-solid fa-bookmark"></i> お気に入り
               <% end %>
             </li>
             &emsp;
             <li>
                <%= link_to ski_resorts_path, class:"btn btn-outline-secondary" do %>
-                 スキー場一覧
+                 <i class="fa-solid fa-person-skiing"></i> スキー場一覧
                <% end %>
             </li>
             &emsp;
             <li>
               <%= link_to customers_my_page_path, class:"btn btn-outline-secondary" do %>
-                マイページ
+                <i class="fa-solid fa-user"></i> マイページ
               <% end %>
             </li>
             &emsp;
             <li>
               <%= link_to destroy_customer_session_path, method: :delete, class:"btn btn-outline-secondary" do %>
-                ログアウト
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> ログアウト
               <% end %>
             </li>
             <% elsif owner_signed_in? %>
             <li>
               <%= link_to owners_ski_resorts_path, class:"btn btn-outline-secondary" do %>
-                スキー場一覧
+                <i class="fa-solid fa-person-skiing"></i> スキー場一覧
               <% end %>
             </li>
             &emsp;
             <li>
               <%= link_to owners_my_page_path, class:"btn btn-outline-secondary" do %>
-                マイページ
+                <i class="fa-solid fa-user"></i> マイページ
               <% end %>
             </li>
             &emsp;
             <li>
               <%= link_to destroy_owner_session_path, method: :delete, class:"btn btn-outline-secondary" do %>
-                ログアウト
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> ログアウト
               <% end %>
             </li>
             <% elsif admin_signed_in? %>
             <li>
               <%= link_to admin_prefecture_index_path, class:"btn btn-outline-secondary" do %>
-                都道府県追加
+                <i class="fa-solid fa-snowflake"></i> 都道府県追加
               <% end %>
             </li>
             &emsp;
             <li>
               <%= link_to admin_ski_resorts_path, class:"btn btn-outline-secondary" do %>
-                スキー場一覧
+                <i class="fa-solid fa-person-skiing"></i> スキー場一覧
               <% end %>
             </li>
             &emsp;
             <li>
               <%= link_to admin_customers_path, class:"btn btn-outline-secondary" do %>
-                会員一覧
+                <i class="fa-solid fa-users"></i> 会員一覧
               <% end %>
             </li>
             &emsp;
             <li>
               <%= link_to admin_owners_path, class:"btn btn-outline-secondary" do %>
-                経営者一覧
+                <i class="fa-solid fa-user-tie"></i> 経営者一覧
               <% end %>
             </li>
             &emsp;
             <li>
               <%= link_to destroy_admin_session_path, method: :delete, class:"btn btn-outline-secondary" do %>
-                ログアウト
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> ログアウト
               <% end %>
             </li>
             <% else %>
             <li>
               <%= link_to root_path, class:"btn btn-outline-secondary" do %>
-                TOP
+                <i class="fa-solid fa-house"></i> TOP
               <% end %>
             </li>
             &emsp;
             <li>
               <%= link_to homes_registration_top_path, class:"btn btn-outline-secondary" do %>
-                新規登録
+                <i class="fa-solid fa-user-plus"></i> 新規登録
               <% end %>
             </li>
             &emsp;
             <li>
               <%= link_to homes_session_top_path, class:"btn btn-outline-secondary" do %>
-                ログイン
+                <i class="fa-solid fa-arrow-right-to-bracket"></i> ログイン
                <% end %>
             </li>
             <% end %>
@@ -137,7 +137,9 @@
       </nav>
     </header>
     
-    <%= yield %>
+    <body style="background-color: #EEFFFF;">
+      <%= yield %>
+    </body>
     
     <footer class="border-top", style="margin-top: 80px;">
       <div style="height: 130px;"></div>
