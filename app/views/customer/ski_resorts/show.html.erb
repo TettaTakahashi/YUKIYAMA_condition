@@ -5,7 +5,10 @@
     <%= image_tag @ski_resort.image, size: "480x310" %>
     
     <div class="ml-5">
-      <h3><%= @ski_resort.name %> (<%= @ski_resort.prefecture.prefecture_name %>)</h3>
+      <div class="d-flex align-items-center">
+        <h3><%= @ski_resort.name %></h3>
+        <h5 class="ml-3">(<%= @ski_resort.prefecture.prefecture_name %>)</h5>
+      </div>
       
       <p class="mt-5"><%= @ski_resort.introduction %></p>
       

@@ -1,5 +1,5 @@
 class Customer::SkiResortsController < ApplicationController
-  before_action :authenticate_customer!, only: [:show]
+  before_action :authenticate_customer!, only: [:show, :search]
   
   def index
     @ski_resorts=SkiResort.page(params[:page])
