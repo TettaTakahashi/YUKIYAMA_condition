@@ -13,7 +13,9 @@
       <p class="mt-5"><%= @ski_resort.introduction %></p>
       
       <div class="d-flex mt-5">
-        <div class="mt-2">最終更新：<%= @ski_resort.updated_at.strftime('%Y/%m/%d/%T') %></div>
+        <div class="mt-2", style="color: gray;">
+          最終更新：<%= @ski_resort.updated_at.strftime('%Y/%m/%d/%T') %>
+        </div>
       
         <% if @ski_resort.favorite_resorted_by?(current_customer) %>  
           <%= link_to "お気に入りから外す", favorite_resort_path(@ski_resort), method: :delete, class:"btn btn-success ml-4" %>
