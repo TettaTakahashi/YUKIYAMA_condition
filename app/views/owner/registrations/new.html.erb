@@ -2,6 +2,8 @@
 
   <h2 class="mt-5">スキー場経営者新規登録</h2>
   
+  <%= flash[:notice] %>
+  
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "owner/shared/error_messages", resource: resource %>
   

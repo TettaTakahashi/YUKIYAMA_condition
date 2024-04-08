@@ -1,6 +1,14 @@
 <div class="container">
   
-  <h2 class="mt-5">スキー場新規登録</h2>
+  <div class="d-flex my-5 align-items-center">
+    <h2>スキー場新規登録</h2>
+    <h5 class="ml-5", style="color: red;">※全て必須項目</h5>
+  </div>
+  
+  <% flash.each do |message_type, message| %>
+  　<div><%= message %></div>
+　<% end %>
+
   
   <%= form_with model: @ski_resort do |f| %>
   <table cellpadding="10", style="font-size: 20px;">

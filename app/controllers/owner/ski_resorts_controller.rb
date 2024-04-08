@@ -11,8 +11,12 @@ class Owner::SkiResortsController < ApplicationController
   
   def create
     @ski_resort=current_owner.ski_resorts.new(ski_resort_params)
-    @ski_resort.save
-    redirect_to owners_ski_resorts_path
+    if @ski_resort.save
+      redirect_to owners_ski_resorts_path
+    else
+      flash.now[:alert]="全ての項目を入力してください"
+      render :new
+    end
   end
   
   def show
@@ -32,6 +36,7 @@ class Owner::SkiResortsController < ApplicationController
     if @ski_resort.update(ski_resort_params)
       redirect_to owners_ski_resort_path(@ski_resort)
     else
+      flash.now[:alert]="全ての項目を入力してください"
       render :edit
     end
   end
