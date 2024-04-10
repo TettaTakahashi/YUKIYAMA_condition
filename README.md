@@ -14,11 +14,18 @@
 - 最高のコンディションでスキーやスノーボードを楽しみたい人
 ​
 ### 主な利用シーン
-- その日に利用したいスキー場を検索する時
-- スキー場ごとの特徴や、人気のあるスキー場を検索したい時
+- その日に利用したいスキー場の状態を確認する時
+- スキー場のごと特徴や料金について検索する時
 ​
 ## 設計書
-後ほど作成予定
+- [ER図](https://drive.google.com/file/d/19Cf0JE5W5dD2232ZliLOG8GH9tolsJOZ/view?usp=drive_link)
+- [画面遷移図（会員側）](https://drive.google.com/file/d/1lBfEEdEFiXnf6kHqhd8QKyBgyCS0pHKR/view?usp=drive_link)
+- [画面遷移図（管理者側）](https://drive.google.com/file/d/1zJEF0f373OCMpP1DY-fvx7oOjKaeBEqf/view?usp=drive_link)
+- [ワイヤーフレーム（会員側）](https://drive.google.com/file/d/1LM0DI3y0M0mgabB2SRKM15r6qWpWMAC4/view?usp=drive_link)
+- [ワイヤーフレーム（管理者側）](https://drive.google.com/file/d/1w_HZM2Is1tIPoH6RUe26nvL6byBCeXNL/view?usp=drive_link)
+- [詳細設計](https://docs.google.com/spreadsheets/d/1Wf-HtMGHfvbMW-mKzhB7CTWENxj7DD9EVNMLm26dNX0/edit?usp=drive_link)
+- [テーブル定義書](https://docs.google.com/spreadsheets/d/1WVUxkWWR3gUTZPkr3CSrHHKlTQxEWMr9E8lyel2tfQs/edit?usp=drive_link)
+- [テスト仕様書](https://docs.google.com/spreadsheets/d/1hFoKeRpMxZDs8JiWSaYELlswfet6tUPBGuDNXbpbp_Y/edit?usp=drive_link)
 ​
 ## 開発環境
 - OS：Linux(CentOS)
@@ -28,4 +35,6 @@
 - IDE：Cloud9
 ​
 ## 使用素材
-後ほど作成予定
+- イラスト素材として以下のサイトを利用
+  -  [Vecteezy](https://www.vecteezy.com/)
+  -  [gettyimages](https://www.gettyimages.co.jp)
