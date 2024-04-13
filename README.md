@@ -21,7 +21,7 @@
 - [ER図](https://drive.google.com/file/d/19Cf0JE5W5dD2232ZliLOG8GH9tolsJOZ/view?usp=drive_link)
 - [画面遷移図（会員側）](https://drive.google.com/file/d/1lBfEEdEFiXnf6kHqhd8QKyBgyCS0pHKR/view?usp=drive_link)
 - [画面遷移図（管理者側）](https://drive.google.com/file/d/1zJEF0f373OCMpP1DY-fvx7oOjKaeBEqf/view?usp=drive_link)
-- [ワイヤーフレーム（会員側）](https://drive.google.com/file/d/1LM0DI3y0M0mgabB2SRKM15r6qWpWMAC4/view?usp=drive_link)
+- [ワイヤーフレーム（会員側）](https://drive.google.com/file/d/1LM0DI3y0M0mgabB2SRKM15r6qWpWMAC4/view)
 - [ワイヤーフレーム（管理者側）](https://drive.google.com/file/d/1w_HZM2Is1tIPoH6RUe26nvL6byBCeXNL/view?usp=drive_link)
 - [詳細設計](https://docs.google.com/spreadsheets/d/1Wf-HtMGHfvbMW-mKzhB7CTWENxj7DD9EVNMLm26dNX0/edit?usp=drive_link)
 - [テーブル定義書](https://docs.google.com/spreadsheets/d/1WVUxkWWR3gUTZPkr3CSrHHKlTQxEWMr9E8lyel2tfQs/edit?usp=drive_link)
