@@ -8,5 +8,5 @@
 
 Admin.create!(
   email: 'aaa@aaa',
-  password: '111111'
+  password: "作成したキー #{ENV['SECRET_KEY']}"
 )
