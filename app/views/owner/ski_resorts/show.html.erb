@@ -20,7 +20,7 @@
         <% if @ski_resort.owner == current_owner %>
           <%= link_to "編集する", edit_ski_resort_path(@ski_resort), class:"btn btn-success ml-4" %>
             
-          <%= link_to "削除する", ski_resort_path(@ski_resort), method: :delete, "dataconfirm" => "本当に削除しますか？", class:"btn btn-danger ml-4" %>
+          <%= link_to "削除する", ski_resort_path(@ski_resort), method: :delete, "data-confirm" => "本当に削除しますか？", class:"btn btn-danger ml-4" %>
           
           <h5 class="ml-4 mt-2">❤️ <%= @favorite_resorts_count %></h5>
         <% end %>
