@@ -6,10 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
- Admin.find_or_create_by!(
-   email: 'aaa@aaa',
-   password: "#{ENV['SECRET_KEY']}"
- )
+ Admin.find_or_create_by!(email: 'aaa@aaa') do |admin|
+   admin.email = "aaa@aaa"
+   admin.password = "#{ENV['SECRET_KEY']}"
+end
+ 
 
 Prefecture.find_or_create_by!(
   prefecture_name: "北海道"
