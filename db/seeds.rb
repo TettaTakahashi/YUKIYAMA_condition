@@ -6,16 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Admin.create!(
-  email: 'aaa@aaa',
-  password: "#{ENV['SECRET_KEY']}"
+ Admin.find_or_create_by!(
+   email: 'aaa@aaa',
+   password: "#{ENV['SECRET_KEY']}"
+ )
+
+Prefecture.find_or_create_by!(
+  prefecture_name: "北海道"
 )
 
-Prefecture.prefecture_name = "北海道"
 
-
-Owner.find_or_create_by!(email: "ggg@email") do |owner|
+Owner.find_or_create_by!(email: 'ggg@email') do |owner|
   owner.owner_name = "経営一郎"
+  owner.email = 'ggg@email'
   owner.password = "aaaaaa"
 end
 
@@ -28,7 +31,7 @@ SkiResort.find_or_create_by!(name: "◯◯スノーリゾート") do |ski_resort
   ski_resort.waiting_time = "10分〜15分"
   ski_resort.price = "4500"
   ski_resort.road_condition = "圧雪"
-  ski_resoer.weather = "曇り"
+  ski_resort.weather = "曇り"
   ski_resort.prefecture_id = 1
   ski_resort.owner_id = 1
 end
@@ -41,7 +44,7 @@ SkiResort.find_or_create_by!(name: "◯◯スキーパーク") do |ski_resort|
   ski_resort.waiting_time = "5分〜10分"
   ski_resort.price = "5000"
   ski_resort.road_condition = "圧雪"
-  ski_resoer.weather = "雪"
+  ski_resort.weather = "雪"
   ski_resort.prefecture_id = 1
   ski_resort.owner_id = 1
 end
@@ -54,7 +57,7 @@ SkiResort.find_or_create_by!(name: "◯◯スキー場") do |ski_resort|
   ski_resort.waiting_time = "15分〜20分"
   ski_resort.price = "4000"
   ski_resort.road_condition = "圧雪"
-  ski_resoer.weather = "雪"
+  ski_resort.weather = "雪"
   ski_resort.prefecture_id = 1
   ski_resort.owner_id = 1
 end
