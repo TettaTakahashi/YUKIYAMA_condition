@@ -1,5 +1,6 @@
 class Owner::SkiResortsController < ApplicationController
   before_action :authenticate_owner!
+  before_action :only_current_owner, only: [:show, :edit, :update]
   
   def index
     @ski_resorts=current_owner.ski_resorts
@@ -52,5 +53,11 @@ class Owner::SkiResortsController < ApplicationController
   
   def ski_resort_params
     params.require(:ski_resort).permit(:image, :name, :introduction, :sales_active, :snow_active, :waiting_time, :price, :road_condition, :weather, :prefecture_id)
+  end
+  
+  def only_current_owner
+    @ski_resort=SkiResort.find(params[:id])
+    @owner=@ski_resort.owner
+    redirect_to(owners_ski_resorts_path) unless @owner==current_owner
   end
 end

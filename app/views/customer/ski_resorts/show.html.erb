@@ -82,7 +82,7 @@
         <div class="mt-1">
           <div style="font-weight: bold;"><%= review.customer.customer_name %>  ：</div>
             
-          <%= review.comment %>
+          <%= simple_format(review.comment, sanitize: true) %>
         
            
           <% if review.customer == current_customer %>
