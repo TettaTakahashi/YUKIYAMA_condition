@@ -1,6 +1,19 @@
 ---
 ja:
   activerecord:
+    models:
+      customer: "利用者アカウント"
+      owner: "経営者アカウント"
+      
+    attributes:
+      customer:
+        email: "メールアドレス"
+        password: "パスワード"
+        
+      owner:
+        email: "メールアドレス"
+        password: "パスワード"
+        
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
